@@ -49,15 +49,18 @@
     /* --- home introduction and featured work --- */
     .hero-one{padding-top:0;overflow:visible}
     .one-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(22px,2.4vw,38px) clamp(28px,4vw,68px);padding:clamp(30px,4vw,64px) var(--gutter) 30px;align-items:start}
-    .one-statement{grid-column:1/-1;margin:0;text-align:center;font-size:clamp(1.125rem,2vw,1.875rem);font-weight:700;line-height:1.45;word-break:keep-all}
+    .one-statement{grid-column:1/-1;margin:0;text-align:center;font-size:clamp(44px,4.6vw,76px);font-weight:700;line-height:1.15;word-break:keep-all}
     .one-id,.one-works{display:grid;gap:24px;min-width:0}
-    .one-profile{display:grid;grid-template-columns:clamp(148px,15vw,220px) minmax(0,1fr);grid-template-areas:"portrait intro" "actions actions";gap:10px clamp(14px,2vw,34px);align-items:start}
+    .one-profile{display:grid;grid-template-columns:clamp(148px,15vw,220px) minmax(0,1fr);grid-template-rows:max-content 1fr auto;grid-template-areas:"portrait name" "portrait notes" "actions actions";gap:10px clamp(14px,2vw,34px);align-items:start}
     .one-profile img{grid-area:portrait;display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:10px;background:var(--bone)}
-    .one-profile-copy{grid-area:intro;padding-top:clamp(0px,1.5vw,20px)}
+    .one-profile-name{grid-area:name;padding-top:clamp(0px,1.5vw,20px)}
     .one-profile .eyebrow{margin:0 0 6px;color:var(--graphite);font-weight:700}
-    .one-id h1{font-size:clamp(44px,4.6vw,76px);line-height:1.15;margin:0 0 12px;letter-spacing:-.06em}
-    .one-lead{font-size:clamp(1rem,1.4vw,1.21rem);line-height:1.6;margin:0;font-weight:600;word-break:keep-all}
-    .one-motto{display:block;margin-top:12px;color:var(--graphite);font-size:.82rem;line-height:1.55;word-break:keep-all}
+    .one-id h1{font-size:clamp(1.125rem,2vw,1.875rem);line-height:1.45;margin:0;letter-spacing:-.06em}
+    .one-profile-notes{grid-area:notes;display:grid;gap:16px;word-break:keep-all}
+    .one-copy-heading{margin:0 0 3px;color:var(--graphite);font-size:.76rem;font-weight:600;line-height:1.45}
+    .one-copy-points{margin:0;padding-left:1rem;font-size:.96rem;font-weight:700;line-height:1.5}
+    .one-copy-summary{margin:0}
+    .one-copy-detail{margin:5px 0 0;padding-left:10px;border-left:2px solid var(--graphite);color:var(--graphite);font-size:.84rem;line-height:1.55}
     .home-work-heading{font-size:1.25rem;line-height:1.35;margin:0 0 12px;font-weight:700;letter-spacing:-.03em}
     .one-strengths{list-style:none;margin:0;padding:0;border-top:var(--line)}
     .one-strengths li{border-bottom:var(--line);padding:11px 0;display:grid;gap:2px}
@@ -108,8 +111,17 @@
     .one-team{margin:0 var(--gutter);padding:11px 0 16px;border-top:var(--line);display:flex;flex-wrap:wrap;gap:4px 22px;font-size:.78rem;color:var(--graphite)}
     .one-team b{color:var(--ink);font-weight:700}
     @media(max-width:920px){.one-grid{grid-template-columns:minmax(0,1fr)}}
-    @media(max-width:520px){.one-id,.one-works{gap:20px}.one-profile{grid-template-columns:clamp(100px,29vw,140px) minmax(0,1fr)}.one-profile-copy{padding-top:0}.one-id h1{font-size:clamp(32px,10vw,48px);margin-bottom:6px}.one-profile .eyebrow{font-size:.74rem;margin-bottom:4px}.one-lead{font-size:.94rem}.one-motto{font-size:.75rem;margin-top:8px}.work-group{padding:10px}.wc-label{padding:24px 8px 8px}.wc-role,.wc-sub,.wc-team,.wc-badge{font-size:.69rem}.projects-group .work-card:not(.key){min-height:216px}}
-    @media(max-width:360px){.one-statement{margin-inline:-8px;font-size:1rem}.projects-group .work-card.key{min-height:202px}.projects-group .work-card:not(.key){min-height:234px}}
+    @media(max-width:920px){
+      .one-profile{grid-template-columns:clamp(160px,27vw,184px) minmax(0,1fr);grid-template-rows:auto;grid-template-areas:"name name" "portrait notes" "actions actions"}
+      .one-profile-name{padding-top:0}
+    }
+    @media(max-width:600px){
+      .one-profile{grid-template-columns:minmax(0,1fr);grid-template-areas:"name" "portrait" "actions" "notes"}
+      .one-profile img{width:min(160px,100%)}
+      .one-profile-notes{margin-top:8px}
+    }
+    @media(max-width:520px){.one-id,.one-works{gap:20px}.one-statement{font-size:clamp(32px,10vw,48px)}.one-profile .eyebrow{font-size:.74rem;margin-bottom:4px}.work-group{padding:10px}.wc-label{padding:24px 8px 8px}.wc-role,.wc-sub,.wc-team,.wc-badge{font-size:.69rem}.projects-group .work-card:not(.key){min-height:216px}}
+    @media(max-width:360px){.one-statement{margin-inline:-8px}.one-id h1{font-size:1rem}.projects-group .work-card.key{min-height:202px}.projects-group .work-card:not(.key){min-height:234px}}
     /* --- ZERO GATE card --- */
     .zg-roles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:36px}
     .zg-role{background:var(--bone);border-radius:9px;overflow:hidden;display:flex;flex-direction:column}
@@ -234,16 +246,30 @@
         <p class="one-statement ko-serif" data-edit-id="home-statement">규칙과 피드백으로 가상 세계를 실제 경험처럼 설계하는 게임 기획자</p>
         <div class="one-id">
           <div class="one-profile">
-            <img src="images/portrait.jpg" width="354" height="472" alt="이유진 증명사진">
-            <div class="one-profile-copy">
+            <div class="one-profile-name">
               <p class="eyebrow">신입 게임 기획자</p>
               <h1 class="ko-serif" id="home-title" tabindex="-1">이유진</h1>
-              <p class="one-lead">던전과 캐릭터를 기획하고, 플레이 테스트로 구현을 검증합니다.</p>
-              <span class="one-motto">설정이 설명으로 끝나지 않고, 플레이의 경험이 되도록 설계하는걸 중시합니다.</span>
             </div>
+            <img src="images/portrait.jpg" width="354" height="472" alt="이유진 증명사진">
             <div class="one-actions">
               <a href="#portfolio" class="pill">포트폴리오 보기 <span class="arrow" aria-hidden="true">↗</span></a>
               <button type="button" class="pill ghost" id="games-open" aria-haspopup="dialog" aria-controls="games-dialog">출시 게임 플레이하기 <span class="arrow" aria-hidden="true">↗</span></button>
+            </div>
+            <div class="one-profile-notes">
+              <section aria-labelledby="home-work-style">
+                <h2 class="one-copy-heading" id="home-work-style" data-edit-id="home-work-style">일하는 방식</h2>
+                <ul class="one-copy-points">
+                  <li><p class="one-copy-summary" data-edit-id="home-work-summary">웹 프로토타입으로 빠르게 검증</p></li>
+                </ul>
+                <p class="one-copy-detail" data-edit-id="home-work-detail">기획한 레벨과 캐릭터를 구현해 직접 플레이합니다. 의도한 경험과 실제 플레이 감각이 어긋나는 지점을 찾아 규칙과 피드백을 고칩니다.</p>
+              </section>
+              <section aria-labelledby="home-design-priority">
+                <h2 class="one-copy-heading" id="home-design-priority" data-edit-id="home-design-priority">기획에서 중요하게 보는 것</h2>
+                <ul class="one-copy-points">
+                  <li><p class="one-copy-summary" data-edit-id="home-design-summary">플레이어의 선택에 자연스럽게 반응하는 콘텐츠 설계</p></li>
+                </ul>
+                <p class="one-copy-detail" data-edit-id="home-design-detail">다가가면 경계하는 동물처럼, 작은 반응을 통해 플레이어가 게임 속 세계를 살아 있는 곳처럼 느끼도록 설계합니다.</p>
+              </section>
             </div>
           </div>
           <section aria-labelledby="home-contributions">
@@ -610,8 +636,10 @@
 
     function prepareEditableElements() {
       const found = Array.from(document.querySelectorAll(selectors.join(',')));
-      // Keep the automatic IDs used by drafts saved before the new home text.
-      const legacy = found.filter(element => !element.dataset.editId?.startsWith('home-'));
+      // The work summary occupies the previous intro line's slot in older drafts.
+      const legacy = found.filter(element =>
+        element.dataset.editId === 'home-work-summary' || !element.dataset.editId?.startsWith('home-')
+      );
       const unique = legacy.filter((element, index) => legacy.indexOf(element) === index && !legacy.some(other => other !== element && other.contains(element)));
       unique.forEach((element, index) => {
         if (!element.dataset.editId) element.dataset.editId = 'auto-' + String(index + 1).padStart(3,'0');
