@@ -178,6 +178,14 @@
     .zg-group{grid-column:1/-1;grid-row:1/4;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:subgrid;gap:10px;padding:8px;border:3px solid var(--ink);border-radius:14px;min-height:0}.one-works>.work-card.small{border:3px solid var(--ink);border-radius:14px}@media(max-width:1100px){.zg-group{grid-row:auto;grid-template-rows:none;grid-auto-rows:auto}}@media(max-width:640px){.zg-group{grid-template-columns:1fr}}
     .zg-meta{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;font-size:.8rem;padding:0 4px;line-height:1.5}.zg-meta span+span::before{content:"·";margin-right:14px;color:var(--graphite)}.meta-kind{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.03em;padding:3px 10px;border-radius:20px}.meta-kind.corp{background:var(--ink);color:var(--paper)}.zg-meta .meta-kind+span::before{content:none}.card-meta{position:absolute;top:8px;left:8px;right:8px;display:flex;flex-wrap:wrap;gap:2px 8px;align-items:center;font-size:.7rem;line-height:1.4;color:var(--paper);z-index:1}.card-meta>*{background:rgba(0,0,0,.66);padding:2px 8px;border-radius:20px}.card-meta b{background:var(--paper);color:var(--ink);font-weight:700}@media(max-width:1100px){.zg-group{grid-template-rows:none}}
     .wc-role,.card-meta>*{white-space:nowrap}.work-card .wc-label{flex-wrap:wrap}
+    .play-link{display:inline-flex;align-items:center;gap:10px;margin-top:14px;padding:9px 18px;min-height:40px;border-radius:28.8px;background:var(--ink);color:var(--paper);font-size:.875rem;line-height:1.4;font-weight:600}.play-link:hover{text-decoration:none;background:var(--graphite)}@media(max-width:520px){.play-link{margin-top:10px;font-size:.8rem;padding:8px 14px;min-height:36px}}@media print{.play-link{display:none!important}}
+    button.pill{font:inherit;font-size:.875rem;cursor:pointer}
+    .project-cover.art{aspect-ratio:1200/952;max-width:720px}.project-cover.play-video{position:relative;margin-top:36px}.project-cover.play-video figcaption{position:absolute;left:10px;bottom:10px;padding:3px 10px;border-radius:20px;background:rgba(0,0,0,.66);color:var(--paper);font-size:.75rem}
+    .games-dialog{width:min(560px,calc(100vw - 32px));max-height:calc(100vh - 48px);padding:28px;border:0;border-radius:18px;background:var(--bone);color:var(--ink);box-shadow:0 24px 60px rgba(0,0,0,.35)}.games-dialog::backdrop{background:rgba(0,0,0,.5)}
+    .games-head{display:flex;align-items:center;justify-content:space-between;gap:16px}.games-head h2{font-size:1.375rem;font-weight:700}.games-close{width:40px;height:40px;border:1px solid var(--ink);border-radius:50%;background:transparent;color:var(--ink);font-size:1.4rem;line-height:1;cursor:pointer}.games-close:hover{background:var(--paper)}
+    .games-note{margin-top:6px;font-size:.85rem;color:var(--graphite)}.games-list{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:12px}
+    .games-item{display:grid;grid-template-columns:160px 1fr;gap:18px;align-items:center;padding:12px;border-radius:14px;background:var(--paper)}.games-item img{width:160px;height:90px;object-fit:cover;border-radius:8px}.games-info{display:flex;flex-direction:column;align-items:flex-start;gap:3px;font-size:.8rem;color:var(--graphite);line-height:1.5}.games-info b{font-size:1rem;color:var(--ink)}.games-info .play-link{margin-top:8px}
+    @media(max-width:520px){.games-dialog{padding:20px}.games-item{grid-template-columns:1fr;gap:10px}.games-item img{width:100%;height:auto;aspect-ratio:16/9}}
     </style>
 </head>
 <body class="">
@@ -206,7 +214,7 @@
             <li><strong>무엇부터 고칠지 정하는 QA</strong><span>TC 516개 · 버그 등급 S~F · 문서 불일치 49건</span></li>
             <li><strong>피드백 한 줄을 규칙 하나로</strong><span>“기믹은 하나만” → 다음 날 기믹 1개로 정리</span></li>
           </ul>
-          <div class="one-actions"><a href="#portfolio" class="pill">포트폴리오 보기 <span class="arrow" aria-hidden="true">↗</span></a><a href="https://silsilkyw.itch.io/zerogate" class="pill ghost" target="_blank" rel="noopener">ZERO GATE 플레이하기 <span class="arrow" aria-hidden="true">↗</span></a></div>
+          <div class="one-actions"><a href="#portfolio" class="pill">포트폴리오 보기 <span class="arrow" aria-hidden="true">↗</span></a><button type="button" class="pill ghost" id="games-open" aria-haspopup="dialog" aria-controls="games-dialog">출시 게임 플레이하기 <span class="arrow" aria-hidden="true">↗</span></button></div>
         </div>
         <div class="one-works" aria-label="대표 작업">
           <div class="zg-group" aria-label="ZERO GATE"><div class="zg-meta"><span class="meta-kind corp">기업협약 프로젝트</span><span>팀 대해적연합</span><span>2026.09.30–11.12 · 7주</span></div><a class="work-card key" href="#portfolio" data-open="project-zerogate"><video class="wc-video" autoplay muted loop playsinline preload="auto" poster="images/zerogate/keyart-lineup.jpg" aria-hidden="true"><source src="images/zerogate/zg-play.mp4" type="video/mp4"><img src="images/zerogate/zg-play.gif" alt=""></video><span class="wc-team" aria-hidden="true">실제 플레이 · 리틀 가든 보스전</span><span class="wc-label"><span class="wc-role">대표작</span><span class="wc-title">ZERO GATE : HUNTERS</span><span class="wc-sub">현대 한국에 열린 게이트 · 쿼터뷰 액션 로그라이트</span></span></a>
@@ -260,8 +268,9 @@
     <div class="portfolio-intro"><p data-edit-id="text-132">프로젝트 제목을 누르면 담당 역할과 기획 과정, 결과물을 확인할 수 있습니다.</p><div class="project-index"><svg class="hex" aria-hidden="true"><use href="#hexagon"></use></svg>최근 프로젝트순</div></div>
     <div class="projects">
       <details class="project" id="project-zerogate" open="">
-  <summary><span class="project-no">01</span><div class="project-title"><h2>ZERO GATE</h2><p>레벨 디자인 · 캐릭터 기획 · QA</p></div><div class="project-date">2026.09.30–11.12<span>쿼터뷰 액션 로그라이트</span></div><span class="expand-sign" aria-hidden="true">+</span></summary>
+  <summary><span class="project-no">01</span><div class="project-title"><h2>ZERO GATE</h2><p>레벨 디자인 · 캐릭터 기획 · QA</p><a class="play-link" href="https://silsilkyw.itch.io/zerogate" target="_blank" rel="noopener">itch.io에서 플레이하기 <span aria-hidden="true">↗</span></a></div><div class="project-date">2026.09.30–11.12<span>쿼터뷰 액션 로그라이트</span></div><span class="expand-sign" aria-hidden="true">+</span></summary>
   <div class="project-content">
+    <figure class="project-cover art"><img src="images/zerogate/cover-main.jpg" width="1200" height="952" alt="ZERO GATE 대표 이미지. 보라색 머리의 헌터가 붉은 탄환 사이로 검을 들고 뛰어오른다" loading="lazy" decoding="async"></figure>
     <figure class="project-cover wide"><img src="images/zerogate/keyart-lineup.jpg" width="951" height="411" alt="ZERO GATE 키 아트. 무기를 든 헌터 다섯 명이 게이트 앞에 서 있다" loading="lazy" decoding="async"></figure>
     <p class="cover-note">팀 키 아트(AI 생성) · 오른쪽에서 두 번째가 제가 기획한 홍련화입니다.</p>
     <div class="project-overview"><div class="project-summary"><h3>피하고, 때리고, 강화해서<br>보스를 공략하는 게임.</h3><p>현대 한국 곳곳에 ‘게이트’가 열린 세계에서, 헌터를 골라 게이트 안의 방을 돌파하는 쿼터뷰 액션 로그라이트입니다. 한 판은 전투방 3개와 보스방 1개, 약 10분입니다. 방을 비울 때마다 증강 3장 중 1장을 골라 빌드를 만듭니다. 짧은 시간에 손맛 있는 액션을 원하는 수집 게임 유저를 위해 만들었습니다.</p>
@@ -326,11 +335,12 @@
   </div>
 </details>
 <details class="project" id="project-symbion">
-  <summary><span class="project-no">02</span><div class="project-title"><h2 data-edit-id="text-133">SYMBION</h2><p data-edit-id="text-134">메인 아트 · 비주얼 가이드 · 리소스 제작</p></div><div class="project-date">2026.07.21–08.18<span data-edit-id="text-135">2D 플랫포머 액션</span></div><span class="expand-sign" aria-hidden="true">+</span></summary>
+  <summary><span class="project-no">02</span><div class="project-title"><h2 data-edit-id="text-133">SYMBION</h2><p data-edit-id="text-134">메인 아트 · 비주얼 가이드 · 리소스 제작</p><a class="play-link" href="https://mystia1.itch.io/symbion" target="_blank" rel="noopener">itch.io에서 플레이하기 <span aria-hidden="true">↗</span></a></div><div class="project-date">2026.07.21–08.18<span data-edit-id="text-135">2D 플랫포머 액션</span></div><span class="expand-sign" aria-hidden="true">+</span></summary>
   <div class="project-content">
-    <figure class="project-cover"><video autoplay muted loop playsinline preload="metadata" poster="images/symbion-poster.jpg" width="1000" height="516" aria-label="SYMBION 타이틀 화면부터 첫 플레이까지 이어지는 영상" style="width:100%;height:100%;object-fit:cover;display:block"><source src="images/symbion-play.mp4" type="video/mp4"></video></figure>
+    <figure class="project-cover art"><img src="images/symbion-cover.jpg" width="1200" height="952" alt="SYMBION 대표 이미지. 기생체에 감염된 팔로 거대한 촉수 괴물에게 주먹을 날리는 주인공" loading="lazy" decoding="async"></figure>
     <div class="project-overview"><div class="project-summary"><h3 data-edit-id="text-136">하나의 세계를,<br>팀이 공유하는 시각 언어로.</h3><p data-edit-id="text-137">기생체의 능력으로 연구 시설을 탈출하는 바이오펑크 액션 게임입니다. 서로 달랐던 장르 해석을 구체적인 제작 기준으로 정리하고, 캐릭터·레벨·UI 기획을 인게임 리소스로 연결했습니다.</p></div><dl class="project-facts"><div><dt data-edit-id="text-138">형태</dt><dd data-edit-id="text-139">팀 프로젝트 · 2D 횡스크롤 액션 로그라이크</dd></div><div><dt>팀</dt><dd>히어로 협회 · 참여 2026.07.21–08.18 (4주)</dd></div><div><dt>출시</dt><dd>itch.io 출시 · Windows 다운로드와 웹 플레이 · v1.1.0까지 업데이트</dd></div><div><dt data-edit-id="text-140">담당</dt><dd data-edit-id="text-141">메인 아트 · 비주얼 가이드 작성(7.31–8.03) · 기생충 리소스와 애니메이션 · 캐릭터·레벨·UI 리소스 제작</dd></div><div><dt data-edit-id="text-142">활용</dt><dd data-edit-id="text-143">Unity · Photopea · Obsidian</dd></div><div><dt data-edit-id="text-144">산출물</dt><dd data-edit-id="text-145">비주얼 가이드, 캐릭터·레벨·UI 리소스</dd></div></dl></div>
-    <div class="project-metrics" aria-label="비주얼 제작 기준"><div class="metric"><strong>04</strong><span data-edit-id="text-146">중심 색상</span><small data-edit-id="text-147">아이보리 · 회색 · 검정 · 크림슨</small></div><div class="metric"><strong>06</strong><span data-edit-id="text-148">레벨 리소스 유형</span><small data-edit-id="text-149">용도에 따른 제작 기준</small></div><div class="metric"><strong>03</strong><span data-edit-id="text-150">화면 깊이</span><small data-edit-id="text-151">전경 · 중경 · 배경</small></div></div>
+    <figure class="project-cover play-video"><video autoplay muted loop playsinline preload="metadata" poster="images/symbion-poster.jpg" width="1000" height="516" aria-label="SYMBION 타이틀 화면부터 첫 플레이까지 이어지는 영상" style="width:100%;height:100%;object-fit:cover;display:block"><source src="images/symbion-play.mp4" type="video/mp4"></video><figcaption>실제 플레이 · 타이틀 화면부터 첫 전투까지</figcaption></figure>
+    <div class="project-metrics" aria-label="팀 출시 지표"><div class="metric"><strong>455</strong><span data-edit-id="text-146">누적 조회</span><small data-edit-id="text-147">itch.io · 팀 지표 · 11.16 기준</small></div><div class="metric"><strong>173</strong><span data-edit-id="text-148">플레이</span><small data-edit-id="text-149">브라우저 147 · 다운로드 26 · 조회 대비 38%</small></div><div class="metric"><strong>13</strong><span data-edit-id="text-150">플레이어 평가</span><small data-edit-id="text-151">컬렉션 저장 6회 · 팀 지표</small></div></div>
     <div class="case-steps"><section class="case-step"><p class="eyebrow" data-edit-id="text-152">01 / Challenge</p><h4 data-edit-id="text-153">장르명만으로는<br>같은 화면을 만들 수 없다</h4><p data-edit-id="text-154">팀원마다 ‘바이오펑크’에서 떠올리는 이미지가 달랐습니다. 분위기와 전투 가독성을 함께 지키며 제작물을 판단할 기준이 필요했습니다.</p></section><section class="case-step"><p class="eyebrow" data-edit-id="text-155">02 / Approach</p><h4 data-edit-id="text-156">참고할 요소와<br>제외할 요소를 명확히</h4><p data-edit-id="text-157">레퍼런스를 색상·실루엣·재질·화면 깊이로 분석했습니다. 비대칭 신체와 발광하는 눈을 강조하고, 직접적인 장기·혈액 표현과 촉수 사용을 제한했습니다.</p></section><section class="case-step"><p class="eyebrow" data-edit-id="text-158">03 / Iteration</p><h4 data-edit-id="text-159">플레이에 필요한 정보가<br>먼저 읽히도록</h4><p data-edit-id="text-160">배경 장식의 대비를 낮추고 구조물 외곽과 상호작용 오브젝트의 색상 차이를 강화했습니다. 수정 이유를 기록하고 가이드에 다시 반영했습니다.</p></section></div>
     <div class="case-result"><h4 data-edit-id="text-161">결과와 배움</h4><p data-edit-id="text-162">추상적인 장르 이미지를 팀이 공유할 수 있는 규칙으로 정리하고, Unity에서 배치·확인할 수 있는 리소스로 구체화했습니다. 비주얼 기획은 팀이 같은 판단을 내릴 수 있는 기준을 설계하는 일임을 배웠습니다.</p></div>
     <div class="project-documents"><a class="text-link" href="https://mystia1.itch.io/symbion" target="_blank" rel="noopener">itch.io에서 플레이하기 <span class="arrow" aria-hidden="true">↗</span></a><a class="text-link" href="downloads/visual-guide.pdf" download="">비주얼 가이드 PDF <span class="arrow" aria-hidden="true">↓</span></a><a class="text-link" href="downloads/project-experience.md" download="">프로젝트 경험 문서 <span class="arrow" aria-hidden="true">↓</span></a></div>
@@ -401,6 +411,28 @@
   </div>
   <div class="editor-help"><strong>사용 팁</strong>HOME·이력서·자기소개·포트폴리오 페이지를 이동하며 수정할 수 있습니다. 내려받은 파일은 원래 HTML과 같은 폴더에 두면 기존 PDF 다운로드 링크도 그대로 작동합니다.</div>
 </aside>
+<dialog class="games-dialog" id="games-dialog" aria-labelledby="games-title">
+  <div class="games-head"><h2 id="games-title">출시한 게임</h2><button type="button" class="games-close" id="games-close" aria-label="닫기">×</button></div>
+  <p class="games-note">itch.io에서 바로 플레이할 수 있습니다.</p>
+  <ul class="games-list">
+    <li class="games-item"><img src="images/zerogate/cover-main.jpg" alt="" width="160" height="90"><div class="games-info"><b>ZERO GATE : HUNTERS</b><span>쿼터뷰 액션 로그라이트 · 웹 데모 (2026.10.30 출시)</span><span>담당 · 던전 ‘리틀 가든’, 캐릭터 ‘홍련화’, QA</span><a class="play-link" href="https://silsilkyw.itch.io/zerogate" target="_blank" rel="noopener">ZERO GATE 플레이하기 <span aria-hidden="true">↗</span></a></div></li>
+    <li class="games-item"><img src="images/symbion-cover.jpg" alt="" width="160" height="90"><div class="games-info"><b>SYMBION</b><span>2D 플랫포머 액션 · 웹 플레이 · Windows 다운로드</span><span>담당 · 메인 아트, 비주얼 가이드, 리소스 제작</span><a class="play-link" href="https://mystia1.itch.io/symbion" target="_blank" rel="noopener">SYMBION 플레이하기 <span aria-hidden="true">↗</span></a></div></li>
+  </ul>
+</dialog>
+<script>
+  (() => {
+    const dlg = document.getElementById('games-dialog');
+    const openBtn = document.getElementById('games-open');
+    if (!dlg || !openBtn || typeof dlg.showModal !== 'function') {
+      if (openBtn) openBtn.addEventListener('click', () => window.open('https://silsilkyw.itch.io/zerogate', '_blank', 'noopener'));
+      return;
+    }
+    openBtn.addEventListener('click', () => dlg.showModal());
+    document.getElementById('games-close').addEventListener('click', () => dlg.close());
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener('close', () => openBtn.focus());
+  })();
+</script>
 <div class="editor-toast" id="editor-toast" aria-hidden="true"></div>
 <div class="sr-only" role="status" aria-live="polite" id="page-status">자기소개 페이지</div>
 <noscript><style>.intro{display:none!important}main>[data-page][hidden]{display:block!important}.site-header .nav-toggle{display:none}</style><p style="padding:24px">페이지 이동을 사용하려면 브라우저의 JavaScript를 켜 주세요. 아래에서 모든 페이지의 내용을 읽을 수 있습니다.</p></noscript>
